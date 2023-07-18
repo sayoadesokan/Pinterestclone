@@ -7,7 +7,16 @@ gem "rails", "~> 7.0.5"
 
 gem "sprockets-rails"
 
-gem "sqlite3", "~> 1.4"
+group :development, :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg',  '0.17.1'
+  gem 'rails_12factor', '0.0.2'
+end
+
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 
 gem "puma", "~> 5.0"
 
